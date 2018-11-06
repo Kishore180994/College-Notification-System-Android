@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.vignan.glitchbreak"
+    android:versionCode="5"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+    
+    <!-- GCM connects to Google Services. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+     <uses-permission android:name="android.permission.WAKE_LOCK" />
+     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+   
+     
+     
+     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+     
+     <!-- GCM requires a Google account. -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    
+    <!-- Keeps the processor from sleeping when a message is received. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    
+    <!--
+     Creates a custom permission so only this app can receive its messages.
+
+     NOTE: the permission *must* be called PACKAGE.permission.C2D_MESSAGE,
+           where PACKAGE is the application's package name.
+    -->
+    <permission
+        android:name="com.vignan.glitchbreak.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    
+    <uses-permission android:name="com.vignan.glitchbreak.permission.C2D_MESSAGE" />
+    
+    <!-- This app has permission to register and receive data message. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.vignan.glitchbreak.DL_MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.vignan.glitchbreak.Open" android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Sync"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.vignan.glitchbreak.MessageActivity"
+            android:label="@string/app_name" 
+             android:configChanges="orientation|keyboardHidden|screenSize">
+          
+        </activity>
+        
+        <activity android:name="com.purplebrain.adbuddiz.sdk.AdBuddizActivity" 
+               android:theme="@android:style/Theme.Translucent" />
+ 
+        <activity
+            android:name="com.vignan.glitchbreak.MainActivity"
+            android:label="@string/app_name" ></activity>
+        
+        <activity
+        android:name="com.vignan.glitcbreak.Notifications"
+        android:label="@string/app_name"
+        android:parentActivityName="com.vignan.glithcbreak.MainActivity" >
+        
+        
+    	</activity>
+    	
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        
+        <activity android:name="com.vignan.glitchbreak.FeeStructure" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Notifications" android:label="@string/app_name" android:parentActivityName="com.vignan.glithcbreak.MainActivity">
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.vignan.glithcbreak.MainActivity" />
+        </activity>
+        <activity android:name="com.vignan.glitchbreak.AdmissionProcedure" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.AdmissionCriteria" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Pl_Training" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Pl_Training_Details" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Pl_StudentsPlaced" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Pl_Objectives" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Pl_About" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Developers" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Vips" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Vita" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Pg" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Mtech" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Btech" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Hostel" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Library" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Stationery" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Canteen" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Health" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Physical" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Transportation" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Admission" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.About" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Contact" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Courses" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Contacts" android:label="@string/app_name"></activity>
+        
+        <activity android:name="com.vignan.glitchbreak.Facilities" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Fests" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.GalleryView" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Map" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Placements" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Reality" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Clubs" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Code" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Street" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Vrc" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Arts" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Aero" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.WebViewActivity" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.WebViewActivity2" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.WebViewActivity3" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.WebViewActivity4" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.WebViewActivity5" android:label="@string/app_name"></activity>
+        
+        <activity android:name="com.vignan.glitchbreak.Toast" android:label="@string/app_name"></activity>
+        <activity android:name="com.vignan.glitchbreak.Main" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.vignan.glitchbreak.PrincipalList" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.vignan.glitchbreak.AdminList" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.vignan.glitchbreak.ExamList" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.vignan.glitchbreak.HODList" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.vignan.glitchbreak.ContactsList" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.vignan.glitchbreak.Results" android:screenOrientation="portrait"></activity>
+               
+        <!--
+          BroadcastReceiver that will receive intents from GCM
+          services and handle them to the custom IntentService.
+
+          The com.google.android.c2dm.permission.SEND permission is necessary
+          so only GCM services can send data messages for the app.
+        -->
+        <receiver
+            android:name="com.vignan.glitchbreak.App42GCMReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+
+                <!-- Receives the actual messages. -->
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <!-- Receives the registration id. -->
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                    <!-- Your package name here -->
+                <category android:name="com.vignan.glitchbreak" />
+            </intent-filter>
+        </receiver>
+        
+        <!--
+          Application-specific subclass of GCMBaseIntentService that will
+          handle received messages.
+
+          By default, it must be named .GCMIntentService, unless the
+          application uses a custom BroadcastReceiver that redefines its name.
+        -->
+        <service android:name="com.vignan.glitchbreak.App42GCMService" >
+            <meta-data android:name="onMessageOpen" android:value="com.vignan.glitchbreak.MessageActivity" />
+        </service>
+        
+    </application>
+    
+    
+
+</manifest>
